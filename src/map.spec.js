@@ -18,5 +18,13 @@ describe("Map", () => {
         expect(identityList).toEqual([1,2,3]);
     });
 
+    it("map([1,2,3], cube) should give [1,8,27]", () => {
+        const cube = (number) => number ** 3;
+
+        const cubedList = map([1,2,3], cube);
+
+        expect(cubedList).toEqual([1,8,27]);
+    });
+
 });
 
