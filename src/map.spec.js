@@ -26,5 +26,13 @@ describe("Map", () => {
         expect(cubedList).toEqual([1,8,27]);
     });
 
+    it("map([{x : 10}],someObject => someObject.x + 1) should give [11]", () => {
+        const callbackFunction = (object) => object.x + 1;
+
+        const outputList = map([{x: 10}], callbackFunction);
+
+        expect(outputList).toEqual([11]);
+    });
+
 });
 

@@ -1,21 +1,21 @@
 const head = require("./head");
 const tail = require("./tail");
 
-const mapEveryElement = (inputList, outputList, fn) => {
+const mapEveryElement = (inputList, outputList, callbackFunction) => {
     if (inputList?.length > 0) {
         const firstElement = head(inputList);
-        const output = fn(firstElement);
+        const output = callbackFunction(firstElement);
 
         const outputListLength = outputList.length;
         outputList[outputListLength] = output;
 
-        return mapEveryElement(tail(inputList), outputList, fn);
+        return mapEveryElement(tail(inputList), outputList, callbackFunction);
     }
     return outputList;
 }
 
-const map = (list, fn) => {
-    return mapEveryElement(list, [], fn);
+const map = (list, callbackFunction) => {
+    return mapEveryElement(list, [], callbackFunction);
 }
 
 module.exports = map;
