@@ -1,5 +1,5 @@
 const filter = (list, callbackFunction) => {
-    return [];
+    return list;
 }
 
 module.exports = filter;
