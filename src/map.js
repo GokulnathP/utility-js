@@ -1,5 +1,5 @@
 const map = (list, fn) => {
-    return [];
+    return list;
 }
 
 module.exports = map;
