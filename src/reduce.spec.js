@@ -18,4 +18,12 @@ describe("Reduce", () => {
         expect(finalReducedValue).toEqual(10);
     });
 
+    it("reduce(['a','b','c'],(x,y)=>x+y) should be abc", () => {
+        const callbackFunction = (x, y) => x + y;
+
+        const finalReducedValue = reduce(['a', 'b', 'c'], callbackFunction);
+
+        expect(finalReducedValue).toEqual("abc");
+    });
+
 });

@@ -1,5 +1,26 @@
+const head = require("./head");
+const tail = require("./tail");
+
+const reduceEveryElement = (inputlist, callbackFunction, outputValue) => {
+    if (inputlist?.length > 0) {
+        const firstElement = head(inputlist);
+
+        if (outputValue) {
+            outputValue += firstElement;
+        } else {
+            outputValue = firstElement;
+        }
+
+        return reduceEveryElement(tail(inputlist), callbackFunction, outputValue);
+    }
+    return outputValue;
+}
+
 const reduce = (list, callbackFunction, startValue) => {
-    return startValue | undefined;
+    if(startValue){
+        return startValue;
+    }
+    return reduceEveryElement(list, callbackFunction, undefined);
 }
 
 module.exports = reduce;
