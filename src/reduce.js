@@ -17,10 +17,7 @@ const reduceEveryElement = (inputlist, callbackFunction, outputValue) => {
 }
 
 const reduce = (list, callbackFunction, startValue) => {
-    if(startValue){
-        return startValue;
-    }
-    return reduceEveryElement(list, callbackFunction, undefined);
+    return reduceEveryElement(list, callbackFunction, startValue);
 }
 
 module.exports = reduce;

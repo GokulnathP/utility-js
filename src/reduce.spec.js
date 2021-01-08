@@ -26,4 +26,12 @@ describe("Reduce", () => {
         expect(finalReducedValue).toEqual("abc");
     });
 
+    it("reduce(['a','b','c'],(x,y)=>x+y,’z’), should be zabc", () => {
+        const callbackFunction = (x, y) => x + y;
+
+        const finalReducedValue = reduce(['a', 'b', 'c'], callbackFunction, 'z');
+
+        expect(finalReducedValue).toEqual("zabc");
+    });
+
 });
