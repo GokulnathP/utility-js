@@ -34,4 +34,12 @@ describe("Reduce", () => {
         expect(finalReducedValue).toEqual("zabc");
     });
 
+    it("reduce([1,2,3,4],(x,y)=>x*y), should be 24", () => {
+        const callbackFunction = (x, y) => x * y;
+
+        const finalReducedValue = reduce([1,2,3,4], callbackFunction);
+
+        expect(finalReducedValue).toEqual(24);
+    });
+
 });

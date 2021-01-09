@@ -6,7 +6,7 @@ const reduceEveryElement = (inputlist, callbackFunction, outputValue) => {
         const firstElement = head(inputlist);
 
         if (outputValue) {
-            outputValue += firstElement;
+            outputValue = callbackFunction(outputValue, firstElement) ;
         } else {
             outputValue = firstElement;
         }
