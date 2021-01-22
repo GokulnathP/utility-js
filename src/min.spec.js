@@ -6,7 +6,7 @@ describe('Min', () => {
 
         const minimumValue = min([]);
 
-        expect(minimumValue).toBeFalsy();
+        expect(minimumValue).toEqual(undefined);
     });
 
     it('min([1,2,3,4]) should be 1', () => {

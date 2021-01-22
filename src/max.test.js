@@ -6,7 +6,7 @@ describe("Max", () => {
 
         const maximumValue = max([]);
 
-        expect(maximumValue).toBeFalsy();
+        expect(maximumValue).toEqual(undefined);
     });
 
     it("max([1,2,3,4]) should be 4", () => {

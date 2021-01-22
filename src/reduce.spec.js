@@ -7,7 +7,7 @@ describe("Reduce", () => {
 
         const finalReducedValue = reduce([], callbackFunction);
 
-        expect(finalReducedValue).toBeFalsy();
+        expect(finalReducedValue).toEqual(undefined);
     });
 
     it("reduce([],v(x,y)=>x+y,10) should be 10", () => {

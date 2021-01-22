@@ -2,11 +2,11 @@ const head = require('./head');
 
 describe("Head", () => {
 
-    it("head([]) should be null or undefined", () => {
+    it("head([]) should be undefined", () => {
 
         const firstElement = head([]);
 
-        expect(firstElement).toBeFalsy();
+        expect(firstElement).toEqual(undefined);
     });
 
     it("head([1,2,3]) should be 1", () => {
