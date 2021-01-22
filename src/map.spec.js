@@ -2,7 +2,7 @@ const map = require('./map');
 
 describe("Map", () => {
 
-    it("map([], cube) should give []", () => {
+    it("Should return empty list when empty list is passed to map", () => {
         const cube = (number) => number ** 3;
 
         const cubedList = map([], cube);
@@ -10,7 +10,7 @@ describe("Map", () => {
         expect(cubedList).toEqual([]);
     });
 
-    it("map([1,2,3], identity) should give [1,2,3]", () => {
+    it("Should  return same list when identity function passed", () => {
         const identity = (number) => number;
 
         const identityList = map([1,2,3], identity);
@@ -18,7 +18,7 @@ describe("Map", () => {
         expect(identityList).toEqual([1,2,3]);
     });
 
-    it("map([1,2,3], cube) should give [1,8,27]", () => {
+    it("Should return list with cubed values when function for cube is passed", () => {
         const cube = (number) => number ** 3;
 
         const cubedList = map([1,2,3], cube);
@@ -26,7 +26,7 @@ describe("Map", () => {
         expect(cubedList).toEqual([1,8,27]);
     });
 
-    it("map([{x : 10}],someObject => someObject.x + 1) should give [11]", () => {
+    it("Should return a list as per function passed when list of object passed", () => {
         const callbackFunction = (object) => object.x + 1;
 
         const outputList = map([{x: 10}], callbackFunction);

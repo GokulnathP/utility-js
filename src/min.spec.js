@@ -2,14 +2,14 @@ const min = require("./min");
 
 describe('Min', () => {
 
-    it('min([]) should be undefined', () => {
+    it('Should return undefined when empty list passed', () => {
 
         const minimumValue = min([]);
 
         expect(minimumValue).toEqual(undefined);
     });
 
-    it('min([1,2,3,4]) should be 1', () => {
+    it('Should return 1 when list with 1, 2, 3 and 4 are passed', () => {
 
         const minimumValue = min([1,2,3,4]);
 

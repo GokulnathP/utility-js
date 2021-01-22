@@ -2,14 +2,14 @@ const max = require("./max");
 
 describe("Max", () => {
 
-    it("max([]) should be undefined", () => {
+    it("Should return undefined when empty list passed", () => {
 
         const maximumValue = max([]);
 
         expect(maximumValue).toEqual(undefined);
     });
 
-    it("max([1,2,3,4]) should be 4", () => {
+    it("Should return 4 when list of 1, 2, 3 and 4 are passed", () => {
 
         const maximumValue = max([1,2,3,4]);
 

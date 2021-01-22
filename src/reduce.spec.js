@@ -2,7 +2,7 @@ const reduce = require("./reduce");
 
 describe("Reduce", () => {
 
-    it("reduce([],(x,y)=>x+y) should be undefined", () => {
+    it("Should return undefined when empty list is passed", () => {
         const callbackFunction = (x, y) => x + y;
 
         const finalReducedValue = reduce([], callbackFunction);
@@ -10,7 +10,7 @@ describe("Reduce", () => {
         expect(finalReducedValue).toEqual(undefined);
     });
 
-    it("reduce([],v(x,y)=>x+y,10) should be 10", () => {
+    it("should return 10 when empty list passed with initial value of 10", () => {
         const callbackFunction = (x, y) => x + y;
 
         const finalReducedValue = reduce([], callbackFunction, 10);
@@ -18,7 +18,7 @@ describe("Reduce", () => {
         expect(finalReducedValue).toEqual(10);
     });
 
-    it("reduce(['a','b','c'],(x,y)=>x+y) should be abc", () => {
+    it("Should return abc when list of a, b and c passed with add call back function", () => {
         const callbackFunction = (x, y) => x + y;
 
         const finalReducedValue = reduce(['a', 'b', 'c'], callbackFunction);
@@ -26,7 +26,7 @@ describe("Reduce", () => {
         expect(finalReducedValue).toEqual("abc");
     });
 
-    it("reduce(['a','b','c'],(x,y)=>x+y,’z’), should be zabc", () => {
+    it("Should return zabc when list of a, b and c passed with add call back and initial value of z", () => {
         const callbackFunction = (x, y) => x + y;
 
         const finalReducedValue = reduce(['a', 'b', 'c'], callbackFunction, 'z');
@@ -34,7 +34,7 @@ describe("Reduce", () => {
         expect(finalReducedValue).toEqual("zabc");
     });
 
-    it("reduce([1,2,3,4],(x,y)=>x*y), should be 24", () => {
+    it("Should return 24 when list with 1, 2, 3 and 4 passed with multiplication call back", () => {
         const callbackFunction = (x, y) => x * y;
 
         const finalReducedValue = reduce([1,2,3,4], callbackFunction);

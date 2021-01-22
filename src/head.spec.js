@@ -2,14 +2,14 @@ const head = require('./head');
 
 describe("Head", () => {
 
-    it("head([]) should be undefined", () => {
+    it("Should return undefined when empty list passed", () => {
 
         const firstElement = head([]);
 
         expect(firstElement).toEqual(undefined);
     });
 
-    it("head([1,2,3]) should be 1", () => {
+    it("Should return 1 when list with 1, 2 and 3 passed", () => {
 
         const firstElement = head([1,2,3]);
 
