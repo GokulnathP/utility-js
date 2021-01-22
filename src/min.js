@@ -1,22 +1,8 @@
-const head = require("./head");
-const tail = require("./tail");
-
-const minimumElement = (inputList, outputValue) => {
-    if(inputList?.length > 0) {
-        const firstElement = head(inputList);
-
-        if(!outputValue || outputValue > firstElement) {
-            outputValue = firstElement;
-        }
-
-        return minimumElement(tail(inputList), outputValue);
-    }
-
-    return outputValue;
-}
+const reduce = require("./reduce");
 
 const min = (list) => {
-    return minimumElement(list, undefined);
+    const callbackFunction = (inputElement, previousOutput) => inputElement < previousOutput ? inputElement : previousOutput;
+    return reduce(list, callbackFunction, undefined);
 }
 
 module.exports = min;
