@@ -3,7 +3,7 @@ const filter = require("./filter");
 describe("Filter", () => {
 
     it("filter([], x => true) should give []", () => {
-        const callbackFunction = value => true;
+        const callbackFunction = () => true;
 
         const filteredOutput = filter([], callbackFunction);
 
@@ -11,7 +11,7 @@ describe("Filter", () => {
     });
 
     it("filter([1,2,3],x => true) should give [1,2,3]", () => {
-        const callbackFunction = value => true;
+        const callbackFunction = () => true;
 
         const filteredOutput = filter([1,2,3], callbackFunction);
 
@@ -19,7 +19,7 @@ describe("Filter", () => {
     });
 
     it("filter([1,2,3],x => false) should give []", () => {
-        const callbackFunction = value => false;
+        const callbackFunction = () => false;
 
         const filteredOutput = filter([1,2,3], callbackFunction);
 
